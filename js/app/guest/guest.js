@@ -255,11 +255,11 @@ export const guest = (() => {
         const url = new URL('https://calendar.google.com/calendar/render');
         const data = new URLSearchParams({
             action: 'TEMPLATE',
-            text: 'The Wedding of Wahyu and Riski',
-            dates: `${formatDate('2023-03-15 10:00')}/${formatDate('2023-03-15 11:00')}`,
-            details: 'Tanpa mengurangi rasa hormat, kami mengundang Anda untuk berkenan menghadiri acara pernikahan kami. Terima kasih atas perhatian dan doa restu Anda, yang menjadi kebahagiaan serta kehormatan besar bagi kami.',
-            location: 'RT 10 RW 02, Desa Pajerukan, Kec. Kalibagor, Kab. Banyumas, Jawa Tengah 53191.',
-            ctz: config.get('tz'),
+            text: 'Đám cưới của Văn Bảy và Ngọc Ánh',
+            dates: `${formatDate('2025-12-08 13:01')}/${formatDate('2025-12-08 13:01')}`,
+            details: 'Dù không thể tránh khỏi những thiếu sót, chúng tôi trân trọng kính mời Quý vị và gia đình bớt chút thời gian quý báu đến tham dự Lễ Thành hôn của chúng tôi. Sự hiện diện và lời chúc phúc của Quý vị chính là niềm vinh dự và niềm vui lớn nhất đối với cô dâu chú rể. Xin chân thành cảm ơn',
+            location: 'Số nhà 01, ngõ 26, đường thôn Nội 3, xã Hoài Đức, thành phố Hà Nội',
+            ctz: config.get('vn'),
         });
 
         url.search = data.toString();
