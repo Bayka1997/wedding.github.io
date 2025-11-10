@@ -12,11 +12,21 @@ html {
 }
 
 .font-esthetic {
-    font-family: 'Sacramento', cursive !important;
+  font-family: "Lavishly Yours", cursive;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .font-arabic {
-    font-family: 'Noto Naskh Arabic', serif !important;
+  font-family: "Momo Signature", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.lavishly-yours-regular {
+  font-family: "Lavishly Yours", cursive;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .img-center-crop {
