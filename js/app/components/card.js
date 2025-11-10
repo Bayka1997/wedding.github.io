@@ -195,7 +195,6 @@ export const card = (() => {
             <div id="body-content-${c.uuid}" data-tapTime="0" data-liked="false" tabindex="0">${body}</div>
             ${renderTracker(c)}
             ${renderButton(c)}
-            <div id="reply-content-${c.uuid}">${resData.join('')}</div>
         </div>`;
     };
 
