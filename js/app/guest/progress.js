@@ -44,7 +44,7 @@ export const progress = (() => {
         }
 
         loaded += 1;
-        info.innerText = `Loading ${type} ${skip ? 'skipped' : 'complete'} ${showInformation()}`;
+        info.innerText = `Chờ một chút, Tình yêu đang đến! ${skip ? '❤❤❤' : '❤❤❤'} ${showInformation()}`;
         bar.style.width = Math.min((loaded / total) * 100, 100).toString() + '%';
 
         if (loaded === total) {
