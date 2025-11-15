@@ -133,7 +133,7 @@
   </head>
 
   <body
-    data-key="d13c4d386fa15e03730306ab5b017dae33f7506ab80da25d73"
+    data-key="d9faced3377732b0edf19e90d1bde0cd5de04801c75eb41743"
     data-url="https://api.ulems.my.id/"
     data-audio="./assets/music/nhaccuoi.mp3"
     data-confetti="true"
@@ -878,7 +878,7 @@
                   class="font-esthetic text-center py-2 m-0"
                   style="font-size: 2.25rem"
                 >
-                  Khoảnh Khắc Hạnh Phúc
+                  Album tình yêu
                 </h2>
 
                 <div
@@ -1735,8 +1735,40 @@
                   class="font-esthetic text-center mt-2 mb-4"
                   style="font-size: 2.25rem"
                 >
+                  Gửi Lời Chúc
+                </h2>
+                <div style="max-width:600px;width:100%;margin:40px auto;padding:20px 30px;border-radius:12px;font-family:Arial,sans-serif;">
+
+                <form id="wishForm" style="display:flex;flex-direction:column;margin-bottom:20px;">
+                  <input type="text" id="name" placeholder="Tên của bạn" required
+                        style="padding:10px;margin-bottom:12px;border:1px solid #ccc;border-radius:8px;font-size:16px;"/>
+                  <textarea id="message" placeholder="Lời chúc của bạn" rows="4" required
+                            style="padding:10px;margin-bottom:12px;border:1px solid #ccc;border-radius:8px;font-size:16px;resize:none;"></textarea>
+                  <button type="submit" 
+                          style="background-color:#4caf50;color:#fff;font-size:16px;padding:10px;border:none;border-radius:8px;cursor:pointer;transition:0.3s;">
+                    Gửi lời chúc
+                  </button>
+                </form>
+
+                <h2 style="margin-bottom:10px;color:#333;" class="font-esthetic text-center mt-2 mb-4">Lời chúc đã gửi:</h2>
+                <div id="wishList"></div>
+              </div>
+                </div>
+              </div>
+          </section>
+
+
+          <section style="display: none;" class="bg-light-dark my-0 pb-0 pt-3" id="comment">
+            <div class="container">
+              <div class="border rounded-5 shadow p-3 mb-2">
+                <h2
+                  class="font-esthetic text-center mt-2 mb-4"
+                  style="font-size: 2.25rem"
+                >
                   Lời Chúc
                 </h2>
+
+       
 
                 <div class="mb-3">
                   <label for="form-name" class="form-label my-1"
@@ -1930,7 +1962,7 @@
               class="position-absolute opacity-25 top-50 start-50 translate-middle bg-cover-home"
             />
         <div class="d-flex flex-column text-center">
-          <h2 class="mb-4 lavishly-yours-regular" style="font-size: 5rem;">
+          <h2 class="mb-4 lavishly-yours-regular" style="font-size: 3.5rem;">
             Save the date
           </h2>
 
@@ -1940,32 +1972,38 @@
             class="img-center-crop rounded-circle border border-3 border-light shadow mb-4 mx-auto"
           />
 
-          <div style="display: flex; flex-direction: row;" class="mt-5 mb-1">
-            <h2 class="lavishly-yours-regular mb-2" style="font-size: 3rem">
+          <div style="display: flex; flex-direction: row; justify-content: center;" class="mt-5 mb-1">
+            <h2 class="lavishly-yours-regular mb-2" style="font-size: 1.5rem">
               Văn Bảy
             </h2>
-            <h2 class="font-esthetic mb-2" style="font-size: 2.25rem">
+            <h2 class="font-esthetic" style="font-size: 1.25rem">
               <img
               src="./assets/images/placeholder.webp"
               data-src="./assets/images/icon-192x192.png"
               fetchpriority="high"
               class="img-fluid mx-auto object-fit-cover opacity-0"
               alt="icon"
-              style="width: 3.5rem; height: 3.5rem"
+              style="width: 1.5rem; height: 1.5rem"
             />
-            <h2 class="lavishly-yours-regular mb-5" style="font-size: 3rem">
+            <h2 class="lavishly-yours-regular mb-5" style="font-size: 1.5rem">
               Ngọc Ánh
             </h2>
           </div>
           <div id="guest-name" data-message="Kính gửi Ông/Bà/Anh/Chị"></div>
 
-          <button
-            type="button"
-            class="btn btn-light shadow rounded-4 mt-3 mx-auto"
-            onclick="undangan.guest.open(this)"
-          >
-            <i class="fa-solid fa-envelope-open fa-bounce me-2"></i>Mở Lời Mời Yêu Thương
-          </button>
+          <div onclick="undangan.guest.open(this)">
+            <button
+              type="button"
+              class="btn btn-light shadow rounded-4 mt-3 mx-auto"
+              onclick="undangan.guest.open(this)"
+              
+            >
+              <i class="fa-solid fa-envelope-open fa-bounce me-2" onclick="undangan.guest.open(this)"></i>
+              <p style="cursor: pointer; display: inline;">
+                Mở Lời Mời Yêu Thương
+              </p>
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -2083,5 +2121,52 @@
         </div>
       </div>
     </div>
+
+    
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js"></script>
+    <script>
+      // Firebase config của bạn
+      const firebaseConfig = {
+        apiKey: "API_KEY",
+        authDomain: "wedding-84f9b.firebaseapp.com",
+        databaseURL: "https://wedding-84f9b-default-rtdb.firebaseio.com",
+        projectId: "wedding-84f9b",
+        storageBucket: "wedding-84f9b.appspot.com",
+        messagingSenderId: "SENDER_ID",
+        appId: "APP_ID"
+      };
+      firebase.initializeApp(firebaseConfig);
+      const db = firebase.database();
+
+      const form = document.getElementById('wishForm');
+      const wishList = document.getElementById('wishList');
+
+      // Load lời chúc realtime
+      db.ref('wishes').on('value', snapshot => {
+        wishList.innerHTML = '';
+        const data = snapshot.val();
+        if(data){
+          Object.values(data).reverse().forEach(w => {
+            const div = document.createElement('div');
+            div.className = 'wish';
+            div.innerHTML = `<div class="wish-name">${w.name}</div><div class="wish-msg">${w.message}</div>`;
+            wishList.appendChild(div);
+          });
+        }
+      });
+
+      // Gửi lời chúc
+      form.addEventListener('submit', e => {
+        e.preventDefault();
+        const name = document.getElementById('name').value.trim();
+        const message = document.getElementById('message').value.trim();
+        if(name && message){
+          db.ref('wishes').push({name, message});
+          form.reset();
+        }
+      });
+    </script>
   </body>
 </html>
