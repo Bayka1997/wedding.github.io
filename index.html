@@ -133,8 +133,6 @@
   </head>
 
   <body
-    data-key="d9faced3377732b0edf19e90d1bde0cd5de04801c75eb41743"
-    data-url="https://api.ulems.my.id/"
     data-audio="./assets/music/nhaccuoi.mp3"
     data-confetti="true"
     data-time="2025-12-08 13:01:01"
@@ -870,7 +868,6 @@
               </div>
             </div>
           </section>
-
           <section class="bg-white-black pb-5 pt-3" id="gallery">
             <div class="container">
               <div class="border rounded-5 shadow p-3">
@@ -1546,24 +1543,6 @@
             </div>
           </section>
 
-          <div class="svg-wrapper">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 1440 320"
-              class="color-theme-svg no-gap-bottom"
-            >
-              <path
-                fill="currentColor"
-                fill-opacity="1"
-                d="M0,96L30,106.7C60,117,120,139,180,154.7C240,171,300,181,360,186.7C420,192,480,192,540,181.3C600,171,660,149,720,154.7C780,160,840,192,900,208C960,224,1020,224,1080,208C1140,192,1200,160,1260,138.7C1320,117,1380,107,1410,101.3L1440,96L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"
-              ></path>
-            </svg>
-          </div>
-
-          <section class="bg-light-dark pb-3" style="padding-bottom:30px;">
-
-          </section>
-
           <section class="bg-light-dark my-0 pb-0 pt-3" id="comment">
             <div class="container">
               <div class="border rounded-5 shadow p-3 mb-2">
@@ -1697,120 +1676,26 @@
             </div>
           </section>
 
-          <section style="display: none;" class="bg-light-dark my-0 pb-0 pt-3" id="comment">
-            <div class="container">
-              <div class="border rounded-5 shadow p-3 mb-2">
-                <h2
-                  class="font-esthetic text-center mt-2 mb-4"
-                  style="font-size: 2.25rem"
-                >
-                  Lời Chúc
-                </h2>
+          <div class="svg-wrapper">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 1440 320"
+              class="color-theme-svg no-gap-bottom"
+            >
+              <path
+                fill="currentColor"
+                fill-opacity="1"
+                d="M0,96L30,106.7C60,117,120,139,180,154.7C240,171,300,181,360,186.7C420,192,480,192,540,181.3C600,171,660,149,720,154.7C780,160,840,192,900,208C960,224,1020,224,1080,208C1140,192,1200,160,1260,138.7C1320,117,1380,107,1410,101.3L1440,96L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"
+              ></path>
+            </svg>
+          </div>
 
-       
+          <section class="bg-light-dark pb-3" style="padding-bottom:30px;">
 
-                <div class="mb-3">
-                  <label for="form-name" class="form-label my-1"
-                    ><i class="fa-solid fa-person me-2"></i>Tên</label
-                  >
-                  <input
-                    dir="auto"
-                    type="text"
-                    class="form-control shadow-sm rounded-4"
-                    id="form-name"
-                    minlength="2"
-                    maxlength="50"
-                    placeholder="Nhập Tên nhé"
-                    autocomplete="name"
-                    data-offline-disabled="false"
-                  />
-                </div>
-
-                <div class="mb-3">
-                  <label for="form-presence" class="form-label my-1"
-                    ><i class="fa-solid fa-person-circle-question me-2"></i>Xác
-                    Nhận Tham Dự</label
-                  >
-                  <select
-                    class="form-select shadow-sm rounded-4"
-                    id="form-presence"
-                    autocomplete="off"
-                    data-offline-disabled="false"
-                  >
-                    <option value="0" selected>Xác nhận tham dự</option>
-                    <option value="1">&#9989; Sẽ Đến</option>
-                    <option value="2">&#10060; Không Thể Đến</option>
-                  </select>
-                </div>
-
-                <div class="d-block mb-3" id="comment-form-default">
-                  <div
-                    id="information"
-                    class="alert alert-info alert-dismissible fade show rounded-4"
-                    role="alert"
-                  >
-                    <button
-                      type="button"
-                      class="btn-close rounded-4 p-3"
-                      data-bs-dismiss="alert"
-                      aria-label="Close"
-                      onclick="undangan.guest.closeInformation()"
-                    ></button>
-
-                    <p style="font-size: 1.5rem">Bạn thân ơi!!!</p>
-                    <p class="m-0">
-                      Hãy thử Thích (Like) như Instagram bằng cách chạm vào phần
-                      bình luận
-                    </p>
-                  </div>
-
-                  <label for="form-comment" class="form-label my-1"
-                    ><i class="fa-solid fa-comment me-2"></i>Gửi Lời Chúc</label
-                  >
-                  <div class="position-relative">
-                    <button
-                      class="btn btn-secondary btn-sm rounded-4 shadow-sm me-1 my-1 position-absolute bottom-0 end-0"
-                      onclick="undangan.comment.gif.open(undangan.comment.gif.default)"
-                      aria-label="button gif"
-                      data-offline-disabled="false"
-                    >
-                      <i class="fa-solid fa-photo-film"></i>
-                    </button>
-                    <textarea
-                      dir="auto"
-                      class="form-control shadow-sm rounded-4"
-                      id="form-comment"
-                      rows="4"
-                      minlength="1"
-                      maxlength="1000"
-                      placeholder="Gửi lời chúc"
-                      autocomplete="off"
-                      data-offline-disabled="false"
-                    ></textarea>
-                  </div>
-                </div>
-
-                <div class="d-none mb-3" id="gif-form-default"></div>
-
-                <div class="d-grid">
-                  <button
-                    class="btn btn-primary btn-sm rounded-4 shadow m-1"
-                    onclick="undangan.comment.send(this)"
-                    data-offline-disabled="false"
-                  >
-                    <i class="fa-solid fa-paper-plane me-2"></i>Gửi
-                  </button>
-                </div>
-              </div>
-
-              <div class="py-3" id="comments" data-loading="false"></div>
-
-              <nav
-                class="d-flex d-none justify-content-center mt-1 mb-0"
-                id="pagination"
-              ></nav>
-            </div>
           </section>
+
+         
+
 
           <div class="svg-wrapper">
             <svg
@@ -2111,6 +1996,7 @@
       const form1 = document.getElementById("rsvpForm");
 
       form1.addEventListener("submit", function(e) {
+        e.preventDefault();
         const name = document.getElementById("name").value.trim();
         const side = document.getElementById("side").value;
         const going = document.getElementById("going").value;
@@ -2130,6 +2016,7 @@
           time: new Date().toISOString()
         })
         .then(() => {
+          e.preventDefault();
           startConfetti();
           form1.reset();
         })

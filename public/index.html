@@ -133,8 +133,7 @@
   </head>
 
   <body
-    data-key="d9faced3377732b0edf19e90d1bde0cd5de04801c75eb41743"
-    data-url="https://api.ulems.my.id/"
+    data-url=""
     data-audio="./assets/music/nhaccuoi.mp3"
     data-confetti="true"
     data-time="2025-12-08 13:01:01"
@@ -1697,120 +1696,6 @@
             </div>
           </section>
 
-          <section style="display: none;" class="bg-light-dark my-0 pb-0 pt-3" id="comment">
-            <div class="container">
-              <div class="border rounded-5 shadow p-3 mb-2">
-                <h2
-                  class="font-esthetic text-center mt-2 mb-4"
-                  style="font-size: 2.25rem"
-                >
-                  Lời Chúc
-                </h2>
-
-       
-
-                <div class="mb-3">
-                  <label for="form-name" class="form-label my-1"
-                    ><i class="fa-solid fa-person me-2"></i>Tên</label
-                  >
-                  <input
-                    dir="auto"
-                    type="text"
-                    class="form-control shadow-sm rounded-4"
-                    id="form-name"
-                    minlength="2"
-                    maxlength="50"
-                    placeholder="Nhập Tên nhé"
-                    autocomplete="name"
-                    data-offline-disabled="false"
-                  />
-                </div>
-
-                <div class="mb-3">
-                  <label for="form-presence" class="form-label my-1"
-                    ><i class="fa-solid fa-person-circle-question me-2"></i>Xác
-                    Nhận Tham Dự</label
-                  >
-                  <select
-                    class="form-select shadow-sm rounded-4"
-                    id="form-presence"
-                    autocomplete="off"
-                    data-offline-disabled="false"
-                  >
-                    <option value="0" selected>Xác nhận tham dự</option>
-                    <option value="1">&#9989; Sẽ Đến</option>
-                    <option value="2">&#10060; Không Thể Đến</option>
-                  </select>
-                </div>
-
-                <div class="d-block mb-3" id="comment-form-default">
-                  <div
-                    id="information"
-                    class="alert alert-info alert-dismissible fade show rounded-4"
-                    role="alert"
-                  >
-                    <button
-                      type="button"
-                      class="btn-close rounded-4 p-3"
-                      data-bs-dismiss="alert"
-                      aria-label="Close"
-                      onclick="undangan.guest.closeInformation()"
-                    ></button>
-
-                    <p style="font-size: 1.5rem">Bạn thân ơi!!!</p>
-                    <p class="m-0">
-                      Hãy thử Thích (Like) như Instagram bằng cách chạm vào phần
-                      bình luận
-                    </p>
-                  </div>
-
-                  <label for="form-comment" class="form-label my-1"
-                    ><i class="fa-solid fa-comment me-2"></i>Gửi Lời Chúc</label
-                  >
-                  <div class="position-relative">
-                    <button
-                      class="btn btn-secondary btn-sm rounded-4 shadow-sm me-1 my-1 position-absolute bottom-0 end-0"
-                      onclick="undangan.comment.gif.open(undangan.comment.gif.default)"
-                      aria-label="button gif"
-                      data-offline-disabled="false"
-                    >
-                      <i class="fa-solid fa-photo-film"></i>
-                    </button>
-                    <textarea
-                      dir="auto"
-                      class="form-control shadow-sm rounded-4"
-                      id="form-comment"
-                      rows="4"
-                      minlength="1"
-                      maxlength="1000"
-                      placeholder="Gửi lời chúc"
-                      autocomplete="off"
-                      data-offline-disabled="false"
-                    ></textarea>
-                  </div>
-                </div>
-
-                <div class="d-none mb-3" id="gif-form-default"></div>
-
-                <div class="d-grid">
-                  <button
-                    class="btn btn-primary btn-sm rounded-4 shadow m-1"
-                    onclick="undangan.comment.send(this)"
-                    data-offline-disabled="false"
-                  >
-                    <i class="fa-solid fa-paper-plane me-2"></i>Gửi
-                  </button>
-                </div>
-              </div>
-
-              <div class="py-3" id="comments" data-loading="false"></div>
-
-              <nav
-                class="d-flex d-none justify-content-center mt-1 mb-0"
-                id="pagination"
-              ></nav>
-            </div>
-          </section>
 
           <div class="svg-wrapper">
             <svg

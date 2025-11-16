@@ -50,8 +50,11 @@ export const progress = (() => {
         if (loaded === total) {
             valid = false;
             cancelProgress = null;
-            document.dispatchEvent(new Event('undangan.progress.done'));
         }
+        
+        document.dispatchEvent(new Event('undangan.progress.done'));
+        console.log({loaded, total});
+        
     };
 
     /**
