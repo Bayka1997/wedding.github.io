@@ -64,7 +64,6 @@ export const image = (() => {
      * @returns {void}
      */
     const getByDefault = (el) => {
-        el.onerror = () => progress.valid('image');
         el.onload = () => {
             el.width = el.naturalWidth;
             el.height = el.naturalHeight;
@@ -73,8 +72,6 @@ export const image = (() => {
 
         if (el.complete && el.naturalWidth !== 0 && el.naturalHeight !== 0) {
             progress.complete('image');
-        } else if (el.complete) {
-            progress.valid('image');
         }
     };
 
