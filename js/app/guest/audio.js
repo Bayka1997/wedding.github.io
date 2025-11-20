@@ -13,6 +13,8 @@ export const audio = (() => {
      */
     const load = async (playOnOpen = true) => {
 
+        let isPausedByVisibility = false; 
+
         const url = document.body.getAttribute('data-audio');
         if (!url) {
             progress.complete('audio', true);
@@ -33,7 +35,7 @@ export const audio = (() => {
 
             progress.complete('audio');
         } catch {
-            progress.invalid('audio');
+            progress.valid('audio');
             return;
         }
 
@@ -44,19 +46,17 @@ export const audio = (() => {
          * @returns {Promise<void>}
          */
         const play = async () => {
-            if (!navigator.onLine || !music) {
-                return;
-            }
-
+            // ... (logic kiểm tra navigator.onLine và music)
+            
             music.disabled = true;
             try {
                 await audioEl.play();
                 isPlay = true;
+                isPausedByVisibility = false; // <-- Đặt lại trạng thái này khi Play thủ công
                 music.disabled = false;
                 music.innerHTML = statePlay;
             } catch (err) {
-                isPlay = false;
-                util.notify(err).error();
+                // ...
             }
         };
 
@@ -64,7 +64,9 @@ export const audio = (() => {
          * @returns {void}
          */
         const pause = () => {
+            // Luôn dừng và đặt trạng thái người dùng là PAUSED
             isPlay = false;
+            isPausedByVisibility = false; // <-- Đặt lại trạng thái này khi Pause thủ công
             audioEl.pause();
             music.innerHTML = statePause;
         };
@@ -77,7 +79,27 @@ export const audio = (() => {
             }
         });
 
-        music.addEventListener('offline', pause);
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) {
+                // --- ẨN TAB ---
+                // Nếu nhạc đang chạy (do người dùng bật), thì tạm dừng và ghi nhận là do chuyển tab
+                if (isPlay) { 
+                    audioEl.pause();
+                    isPausedByVisibility = true; // <-- Đánh dấu đã dừng do chuyển tab
+                }
+            } else {
+                // --- HIỂN THỊ LẠI TAB ---
+                // Nếu nhạc ĐÃ BỊ DỪNG DO CHUYỂN TAB (và isPlay là true - trạng thái mong muốn là play)
+                if (isPausedByVisibility && isPlay) { 
+                    try {
+                        audioEl.play();
+                        isPausedByVisibility = false; // <-- Đặt lại trạng thái sau khi phát lại
+                    } catch (err) {
+                        console.error("Lỗi khi cố gắng phát lại âm thanh:", err);
+                    }
+                }
+            }
+        });
         music.addEventListener('click', () => isPlay ? pause() : play());
     };
 

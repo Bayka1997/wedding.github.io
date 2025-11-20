@@ -276,7 +276,7 @@ export const guest = (() => {
         const load = (opt) => {
             loader(opt)
                 .then(() => progress.complete('libs'))
-                .catch(() => progress.invalid('libs'));
+                .catch(() => progress.valid('libs'));
         };
 
         return {
@@ -336,7 +336,7 @@ export const guest = (() => {
             progress.add();
             progress.add();
 
-            // if don't have data-src.
+            // if don't have src.
             if (!img.hasDataSrc()) {
                 img.load();
             }
