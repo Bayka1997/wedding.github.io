@@ -129,6 +129,21 @@
     ></script>
     <script src="./dist/guest.js"></script>
 
+    <style>
+      @media (min-width: 1200px) {
+    #root {
+      width: 60%;
+      margin-left: 20% !important;
+    }
+  }
+
+  /* Màn hình < 480px (mobile nhỏ) */
+  @media (max-width: 480px) {
+    #root {
+      width: 100%;
+      background: lightgreen;
+    }
+  }
     </style>
   </head>
 
@@ -137,7 +152,7 @@
     data-confetti="true"
     data-time="2025-12-08 13:01:01"
   >
-    <div class="row m-0 p-0 opacity-0" id="root" style="width: 60%; margin-right: 20%;">
+    <div class="row m-0 p-0 opacity-0" id="root">
       <div
         class="sticky-top vh-100 d-none d-sm-block col-sm-5 col-md-6 col-lg-7 col-xl-8 col-xxl-9 overflow-y-hidden m-0 p-0"
       >
@@ -470,7 +485,7 @@
                         class="font-esthetic text-center py-2 mb-2"
                         style="font-size: 2.125rem"
                     >
-                      Câu huyện tình của chúng tôi
+                      Câu huyện tình của chúng mình
                     </h2>
 
                     <div class="position-relative">
